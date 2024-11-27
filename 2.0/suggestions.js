@@ -1,6 +1,6 @@
 function getSearchSuggest(params, engineUrl) {
   return new Promise((resolve, reject) => {
-    let proxy = "http://127.0.0.1:1000/v2?url=";
+    let proxy = "";
     let data = [];
     if (engineUrl.includes("taobao.com") || engineUrl.includes("jd.com")) {
       //淘宝&京东
@@ -12,12 +12,14 @@ function getSearchSuggest(params, engineUrl) {
           "callback"
         )
         .then((res) => {
-          for (let item of res.data.result) {
-            data.push(item[0]);
+          if(res?.data?.result){
+            for (let item of res.data.result) {
+              data.push(item[0]);
+            }
           }
           console.log(data);
           resolve(data);
-        });
+        })
     } else if (engineUrl.includes("bilibili.com")) {
       //B站
       axios
@@ -28,8 +30,10 @@ function getSearchSuggest(params, engineUrl) {
           "func"
         )
         .then((res) => {
-          for (let item in res.data.result.tag) {
-            data.push(res.data.result.tag[item].value);
+          if(res?.data?.result?.tag){
+            for (let item in res.data.result.tag) {
+              data.push(res.data.result.tag[item].value);
+            }
           }
           console.log(data);
           resolve(data);
@@ -42,13 +46,14 @@ function getSearchSuggest(params, engineUrl) {
           "func"
         )
         .then((res) => {
-          for (let item in res.data.s) {
-            const str1 = res.data.s[item];
-            const str2 = str1.split("$$");
-            const str3 = str2[1].replace(/\$\d{3}\$/g, "");
-            const str4 = str2[0].replace("$", "");
-            data.push(`${str3.replace("$", "")}，${str4}`);
-            // data.push({ res: str2[3], city: str2[0] + str2[1] });
+          if(res?.data?.s){
+            for (let item in res.data.s) {
+              const str1 = res.data.s[item];
+              const str2 = str1.split("$$");
+              const str3 = str2[1].replace(/\$\d{3}\$/g, "");
+              const str4 = str2[0].replace("$", "");
+              data.push(`${str3.replace("$", "")}，${str4}`);
+            }
           }
           console.log(data);
           resolve(data);
@@ -63,8 +68,10 @@ function getSearchSuggest(params, engineUrl) {
           "cb"
         )
         .then((res) => {
-          for (let item in res.data.g) {
-            data.push(res.data.g[item].q);
+          if(res?.data?.g){
+            for (let item in res.data.g) {
+              data.push(res.data.g[item].q);
+            }
           }
           console.log(data);
           resolve(data);
