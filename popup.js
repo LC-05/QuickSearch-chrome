@@ -119,7 +119,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   // });
 
   const performSearch = (keyword) => {
-    const searchTerm = keyword.length > 0 ? keyword : searchInput.value.trim();
+    const searchTerm = keyword ? keyword : searchInput.value.trim();
     if (searchTerm && currentSearchEngine) {
       const searchUrl = currentSearchEngine.url.replace(
         "%s",
