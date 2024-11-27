@@ -1,0 +1,155 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  width: 800px;
+  padding: 20px;
+}
+
+.search-container {
+  width: 100%;
+}
+
+.search-wrapper {
+  height: 56px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-toggle {
+  /* width: 100px; */
+  height: 38px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.dropdown-toggle img {
+  width: 12px;
+  height: 16px;
+}
+
+.arrow {
+  font-size: 12px;
+  color: #666;
+}
+.dropdown-menu-warp {
+  top: 100%;
+  left: 0;
+  position: absolute;
+  margin-top: 4px;
+  width: 150px;
+  padding-bottom: 20px;
+}
+.dropdown-menu {
+  left: 8px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  overflow: hidden;
+}
+
+.hidden {
+  display: none;
+}
+
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  cursor: move;
+  transition: background-color 0.2s;
+  user-select: none;
+  padding: 8px 12px;
+}
+.dropdown-item .item-engine-index {
+  width: 24px;
+  font-size: 14px;
+}
+.dropdown-item .item-engine-name {
+  font-size: 16px;
+}
+
+.dropdown-item.dragging {
+  opacity: 0.5;
+  background-color: #f0f0f0;
+}
+
+.dropdown-item img {
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
+}
+
+.search-input {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+}
+
+.search-button {
+  width: 82px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  font-size: 14px;
+}
+.search-button span {
+  margin-left: 8px;
+}
+.search-button img {
+  width: 14px;
+  height: 14px;
+  margin-left: 16px;
+}
+
+.options-link {
+  margin-top: 10px;
+  text-align: right;
+}
+
+.options-link a {
+  color: #4a90e2;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.options-link a:hover {
+  text-decoration: underline;
+}
+.selected-engine-name {
+  font-size: 16px;
+}
+.dropdown-toggle .selected-icon {
+  display: block;
+  width: 12px;
+  height: 16px; 
+  margin-left: 10px;
+}
+.suggestions-warp {
+  min-width: 550px;
+  right: 100px;
+  left: auto;
+  font-size: 16px;
+}
+.suggestions-warp .dropdown-menu{
+  overflow: hidden;
+}
+.suggestions-warp .dropdown-item{
+  cursor: pointer;
+}

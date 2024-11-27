@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Engine Settings</title>
+    <link rel="stylesheet" href="options.css">
+</head>
+<body>
+    <div class="options-container">
+        <h1>外观</h1>
+        <div class="theme-options">
+            <label for="theme">主题:</label>
+            <select id="theme" class="el-select">
+                <option value="system">跟随系统</option>
+                <option value="light">浅色</option>
+                <option value="dark">深色</option>
+            </select>
+        </div>
+        <h1>搜索引擎设置</h1>
+        <div class="engine-list" id="engineList"></div>
+        <div class="add-engine">
+            <h2>添加新搜索引擎</h2>
+            <form id="addEngineForm">
+                <input type="text" id="engineName" placeholder="搜索引擎名称" required>
+                <input type="url" id="engineUrl" placeholder="搜索URL (包含 %s 作为搜索词占位符)" required>
+                <button type="submit">添加</button>
+            </form>
+        </div>
+    </div>
+    <script src="options.js"></script>
+</body>
+</html>

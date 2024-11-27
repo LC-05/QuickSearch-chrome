@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark">
+    <title>Search Extension</title>
+    <link rel="stylesheet" href="style_basic.css" />
+  </head>
+  <body>
+    <div class="search-container">
+      <div class="search-wrapper">
+        <button class="dropdown-toggle">
+          <span class="selected-engine-name" id="selected-engine-name"></span>
+          <span class="selected-icon"></span>
+        </button>
+        <div class="dropdown-menu-warp">
+            <div class="dropdown-menu hidden" id="engineList">
+              <!-- Dynamically populated -->
+            </div>
+        </div>
+        <input type="text" class="search-input" placeholder="请输入搜索内容" />
+        <button class="search-button">
+            <img src="./icons/search.png" alt="">
+            <span>搜索</span>
+        </button>
+        <div class="suggestions-warp dropdown-menu-warp">
+          <div class="dropdown-menu hidden" id="suggestions-list">
+            <!-- Dynamically populated -->
+          </div>
+    </div>
+    <script src="popup.js" type="module"></script>
+  </body>
+  <script src="axios.min.js"></script>
+  <script src="http.js" type="module"></script>
+</html>
+
+<!-- todo 
+搜索建议
+https://map.baidu.com/su?wd=%E5%A4%A9%E5%AE%89%E9%97%A8&cid=131&type=0 
+https://s.search.bilibili.com/main/suggest?term=北京
+-->

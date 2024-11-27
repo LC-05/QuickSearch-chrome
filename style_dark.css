@@ -1,0 +1,44 @@
+body {
+    background-color: #111827;
+  }
+  .search-wrapper {
+    background-color: #1f2937;
+  }
+  .search-input {
+    background-color: #1f2937;
+    color: #d1d5db;
+  }
+  .dropdown-toggle {
+    background-color: #1f2937;
+    border: 1px solid #4b5563;
+  }
+  .selected-engine-name {
+    color: #d1d5db;
+  }
+  .search-button {
+    background-color: #1f2937;
+    border: 1px solid #4b5563;
+    color: #d1d5db;
+  }
+  .dropdown-menu {
+    background-color: #1f2937;
+  }
+  .dropdown-item .item-engine-name {
+    color: #d1d5db;
+  }
+  .dropdown-item .item-engine-index {
+    color: #9ca3af;
+  }
+  .dropdown-item:hover,
+  .dropdown-item.selected {
+    background-color: #4b5563;
+  }
+  .dropdown-toggle .selected-icon {
+    background-image: url("./icons/select-dark.png");
+  }
+  .suggestions-warp .dropdown-item{
+    color: #d1d5db;
+  }
+  .suggestions-warp .selected{
+    background-color: #4b5563;
+  }
