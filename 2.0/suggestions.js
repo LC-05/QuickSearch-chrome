@@ -12,14 +12,14 @@ function getSearchSuggest(params, engineUrl) {
           "callback"
         )
         .then((res) => {
-          if(res?.data?.result){
+          if (res?.data?.result) {
             for (let item of res.data.result) {
               data.push(item[0]);
             }
           }
           console.log(data);
           resolve(data);
-        })
+        });
     } else if (engineUrl.includes("bilibili.com")) {
       //B站
       axios
@@ -30,7 +30,7 @@ function getSearchSuggest(params, engineUrl) {
           "func"
         )
         .then((res) => {
-          if(res?.data?.result?.tag){
+          if (res?.data?.result?.tag) {
             for (let item in res.data.result.tag) {
               data.push(res.data.result.tag[item].value);
             }
@@ -46,7 +46,7 @@ function getSearchSuggest(params, engineUrl) {
           "func"
         )
         .then((res) => {
-          if(res?.data?.s){
+          if (res?.data?.s) {
             for (let item in res.data.s) {
               const str1 = res.data.s[item];
               const str2 = str1.split("$$");
@@ -68,7 +68,7 @@ function getSearchSuggest(params, engineUrl) {
           "cb"
         )
         .then((res) => {
-          if(res?.data?.g){
+          if (res?.data?.g) {
             for (let item in res.data.g) {
               data.push(res.data.g[item].q);
             }
@@ -79,4 +79,3 @@ function getSearchSuggest(params, engineUrl) {
     }
   });
 }
-export { getSearchSuggest };

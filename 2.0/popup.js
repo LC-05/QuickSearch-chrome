@@ -1,4 +1,4 @@
-import { getSearchSuggest } from "./suggestions.js";
+// import { getSearchSuggest } from "./suggestions.js";
 let currentSearchEngine = null;
 let selectedEngineIndex = 0;
 let selectedSuggestionIndex = -1;
@@ -369,4 +369,3 @@ function debounce(func, delay) {
     }, delay);
   };
 }
-const debouncedGetSearchSuggest = debounce(getSearchSuggest, 3000);
