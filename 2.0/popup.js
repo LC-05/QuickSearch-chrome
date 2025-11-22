@@ -347,6 +347,10 @@ function getDefaultEngines() {
       url: "https://search.jd.com/Search?keyword=%s",
     },
     {
+      name: "小红书",
+      url: "https://www.xiaohongshu.com/search_result?keyword=%s",
+    },
+    {
       name: "微信",
       url: "https://weixin.sogou.com/weixin?type=2&query==%s",
     },
